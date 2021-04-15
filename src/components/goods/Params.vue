@@ -199,6 +199,7 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error('获取参数列表失败！')
       }
+      // 先判断字符串是否为空，不为空时将可选项字符串以空格分隔成数组的形式
       res.data.forEach(item => {
         item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
         // 控制文本框的显示与隐藏
