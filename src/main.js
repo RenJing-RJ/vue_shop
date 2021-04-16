@@ -12,6 +12,7 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import axios from 'axios'
+// import VueResource from 'vue-resource'
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
@@ -25,6 +26,7 @@ Vue.component('tree-table', TreeTable)
 Vue.config.productionTip = false
 // 将富文本编辑器注册成为全局可用的组件
 Vue.use(VueQuillEditor)
+// Vue.use(VueResource)
 // Vue.filter('FormatDate', time => { return moment(time).format('YYYY-MM-DD HH:mm:ss') })
 Vue.filter('dateFormat', function(originVal) {
   const dt = new Date(originVal * 1000)
